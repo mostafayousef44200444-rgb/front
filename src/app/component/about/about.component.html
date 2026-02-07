@@ -1,0 +1,64 @@
+<div class="about-page">
+  <div class="hero-wrap d-flex align-items-center justify-content-center text-white text-center">
+    <div class="container" data-aos="fade-up">
+      <h1 class="display-3 fw-bold responsive-h1">About Our Brand</h1>
+      <p class="lead">Crafting luxury apparel with a modern soul since 2026.</p>
+    </div>
+  </div>
+
+  <div class="container my-5 py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-lg-6">
+        <div class="image-stack position-relative mb-4 mb-lg-0">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80" 
+               class="img-fluid rounded-3 shadow-lg main-img" alt="Clothing Store">
+          <div class="color-overlay-box d-none d-sm-block"></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6 text-center text-lg-start">
+        <span class="text-uppercase fw-bold brand-text-color letter-spacing-2">The Heritage</span>
+        <h2 class="display-5 fw-bold mt-2 mb-4 responsive-h2">Quality in Every Thread</h2>
+        <p class="text-secondary mb-4">
+          At our store, we don't just sell clothes; we provide an experience of comfort and confidence. 
+          Our designs are inspired by the fast-paced modern lifestyle while maintaining the elegance of classic fashion.
+        </p>
+        
+        <ul class="list-unstyled d-inline-block text-start">
+          <li class="mb-3 d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2 brand-text-color"></i>
+            <span>Premium Organic Fabrics</span>
+          </li>
+          <li class="mb-3 d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2 brand-text-color"></i>
+            <span>Ethical Manufacturing Processes</span>
+          </li>
+          <li class="mb-3 d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2 brand-text-color"></i>
+            <span>Exclusive Limited Collections</span>
+          </li>
+        </ul>
+
+        <div class="mt-4">
+            <button class="btn btn-brand px-5 py-3">Discover More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light py-5">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-12 col-md-4" *ngFor="let feature of features">
+          <div class="p-4 border-0 h-100 feature-card">
+            <div class="icon-box mb-3 mx-auto">
+                <i [class]="feature.icon"></i>
+            </div>
+            <h4 class="fw-bold">{{feature.title}}</h4>
+            <p class="text-muted">{{feature.desc}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

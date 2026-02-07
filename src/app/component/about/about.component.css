@@ -1,0 +1,90 @@
+/* Color Variable */
+:host {
+    --brand-blue: rgb(0 123 255 / 90%);
+}
+
+.brand-text-color {
+    color: var(--brand-blue);
+}
+
+/* Hero Style - Responsive Height */
+.hero-wrap {
+    min-height: 50vh;
+    padding: 60px 0;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fluid Typography */
+.responsive-h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* يصغر في الموبايل ويكبر في الشاشات الكبيرة */
+}
+
+.responsive-h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+/* Stylish Image Box */
+.image-stack {
+    z-index: 1;
+    max-width: 90%; /* عشان متبقاش لازقة في الحواف في الموبايل */
+    margin: 0 auto;
+}
+
+.color-overlay-box {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-blue);
+    z-index: -1;
+    border-radius: 8px;
+}
+
+/* Custom Button */
+.btn-brand {
+    background-color: var(--brand-blue);
+    color: white;
+    border-radius: 4px; /* انحناء بسيط يعطي مظهر عصري */
+    transition: 0.3s;
+    width: auto;
+}
+
+@media (max-width: 576px) {
+    .btn-brand {
+        width: 100%; /* الزرار ياخد العرض كامل في الموبايل لسهولة الضغط */
+    }
+}
+
+.btn-brand:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Icons box */
+.icon-box {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: var(--brand-blue);
+    font-size: 1.8rem;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+/* منع خروج الصور عن الحواف */
+img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,99 @@
+
+
+/* Color Variable */
+:host {
+    --brand-blue: rgb(0 123 255 / 90%);
+}
+
+.brand-text-color {
+    color: var(--brand-blue);
+}
+
+/* Hero Style */
+.hero-wrap {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Stylish Image Box */
+.image-stack {
+    z-index: 1;
+}
+
+
+
+:host {
+  --brand-blue: rgb(0 123 255 / 90%);
+}
+
+.brand-color { color: var(--brand-blue); }
+.bg-brand { background-color: var(--brand-blue); }
+.bg-brand-light { background-color: rgba(0, 123, 255, 0.1); }
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background-color: var(--brand-blue);
+  border-radius: 2px;
+}
+
+/* Blog Card Custom Styling */
+.blog-card {
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.blog-img-wrap {
+  width: 40%;
+  min-height: 250px;
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img {
+  transform: scale(1.05);
+}
+
+.read-more {
+  color: var(--brand-blue);
+  text-decoration: none;
+  position: relative;
+}
+
+.read-more::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--brand-blue);
+  transition: width 0.3s ease;
+}
+
+.read-more:hover::after {
+  width: 100%;
+}
+
+.post-stats i {
+  color: #adb5bd;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .blog-card { flex-direction: column; }
+  .blog-img-wrap { width: 100%; min-height: 200px; }
+}

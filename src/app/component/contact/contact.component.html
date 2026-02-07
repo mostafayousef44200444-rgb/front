@@ -1,0 +1,77 @@
+  <div class="hero-wrap d-flex align-items-center justify-content-center text-white text-center">
+    <div class="container" data-aos="fade-up">
+      <h1 class="display-3 fw-bold">Contact Our Brand</h1>
+      <p class="lead">Crafting luxury apparel with a modern soul since 2026.</p>
+    </div>
+  </div>
+
+
+  <div class="contact-page py-5">
+  <div class="container shadow-lg rounded-4 overflow-hidden bg-white p-0">
+    <div class="row g-0">
+      <div class="col-lg-4 brand-bg p-5 text-white d-flex flex-column justify-content-between">
+        <div>
+          <h2 class="fw-bold mb-4">Contact Info</h2>
+          <p class="opacity-75 mb-5">Have questions about our latest collection or an existing order? Our team is here to help you.</p>
+          
+          <div class="contact-info-item d-flex align-items-center mb-4">
+            <div class="icon-circle me-3"><i class="bi bi-geo-alt"></i></div>
+            <span>123 Fashion St, Milan, Italy</span>
+          </div>
+          
+          <div class="contact-info-item d-flex align-items-center mb-4">
+            <div class="icon-circle me-3"><i class="bi bi-telephone"></i></div>
+            <span>+1 (555) 000-1111</span>
+          </div>
+          
+          <div class="contact-info-item d-flex align-items-center mb-4">
+            <div class="icon-circle me-3"><i class="bi bi-envelope"></i></div>
+            
+          </div>
+        </div>
+
+        <div class="social-links d-flex gap-3">
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-pinterest"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-8 p-5">
+        <h2 class="fw-bold mb-4">Send us a message</h2>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">First Name</label>
+              <input type="text" class="form-control custom-input" placeholder="John" formControlName="firstName">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Last Name</label>
+              <input type="text" class="form-control custom-input" placeholder="Doe" formControlName="lastName">
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold">Email Address</label>
+              <input type="email" class="form-control custom-input" placeholder="john@example.com" formControlName="email">
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold">Subject</label>
+              <select class="form-select custom-input" formControlName="subject">
+                <option value="orders">Order Inquiry</option>
+                <option value="returns">Returns & Exchanges</option>
+                <option value="collab">Collaborations</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold">Message</label>
+              <textarea class="form-control custom-input" rows="4" placeholder="How can we help you?" formControlName="message"></textarea>
+            </div>
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-brand-blue px-5 py-3 fw-bold">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

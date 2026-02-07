@@ -1,0 +1,99 @@
+<div class="baner">
+ 
+</div>
+
+
+<div class="container my-5">
+
+<h3 class="fw-bold mb-4">🛒 Checkout</h3>
+
+<div *ngIf="loading" class="text-center">
+  <div class="spinner-border"></div>
+</div>
+
+<div *ngIf="!loading && cart?.items?.length === 0" class="alert alert-info">
+السلة فارغة
+</div>
+
+<div class="row" *ngIf="!loading && cart?.items?.length">
+
+  <!-- تفاصيل السلة -->
+  <div class="col-lg-6 mb-4">
+    <div class="card shadow-sm p-3">
+      <h5 class="mb-3">تفاصيل السلة</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of cart.items">
+          <div class="d-flex align-items-center">
+            <img [src]="item.image" width="50" class="me-2 rounded">
+            <div>
+              <div>{{item.name}}</div>
+              <small class="text-muted">Size: {{item.size}}</small>
+            </div>
+          </div>
+          <span>{{item.price * item.quantity}} EGP</span>
+        </li>
+      </ul>
+      <div class="text-end fw-bold fs-5 mt-3">
+        Total: {{cart.total}} EGP
+      </div>
+    </div>
+  </div>
+
+  <!-- بيانات الشحن والدفع -->
+  <div class="col-lg-6 mb-4">
+    <div class="card shadow-sm p-3">
+      <h5 class="mb-3">بيانات الشحن والدفع</h5>
+
+      <div *ngIf="message" class="alert alert-danger">{{message}}</div>
+
+      <form (ngSubmit)="confirmOrder()">
+
+        <div class="mb-2">
+          <label class="form-label">الاسم الكامل</label>
+          <input type="text" class="form-control" [(ngModel)]="fullName" name="fullName" required>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">رقم الهاتف</label>
+          <input type="text" class="form-control" [(ngModel)]="phone" name="phone" required>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">المدينة</label>
+          <input type="text" class="form-control" [(ngModel)]="city" name="city" required>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">الشارع</label>
+          <input type="text" class="form-control" [(ngModel)]="street" name="street" required>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">الدولة</label>
+          <input type="text" class="form-control" [(ngModel)]="country" name="country" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">طريقة الدفع</label>
+          <select class="form-select" [(ngModel)]="paymentMethod" name="paymentMethod" required>
+            <option value="cash">Cash on Delivery</option>
+            <option value="card">Credit Card / PayPal</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">ملاحظات إضافية</label>
+          <textarea class="form-control" rows="3" [(ngModel)]="notes" name="notes"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100" [disabled]="submitting">
+          {{ submitting ? 'جاري التأكيد...' : 'تأكيد الطلب' }}
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+</div>

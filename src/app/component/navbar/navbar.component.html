@@ -1,0 +1,62 @@
+
+<nav class="navbar navbar-expand-xl navbar-transparent px-2 px-sm-4 fixed-top" [class.scrolled]="isScrolled"> 
+    <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
+    
+    <div class="d-flex align-items-center flex-nowrap">
+      <a class="navbar-brand me-3 me-xl-5" href="#">
+        <img src="assets/logo-01.png" alt="Logo" class="logo" style="height: 18px;">
+      </a>
+
+      <div class="nav-links d-none d-xl-flex gap-4">
+        <a routerLink="/" class="nav-link">Home</a>
+        <a routerLink="/shop" class="nav-link">Shop</a>
+        <a routerLink="/features" class="nav-link">Features</a>
+        <a routerLink="/blog" class="nav-link">Blog</a>
+        <a routerLink="/about" class="nav-link">About</a>
+        <a routerLink="/contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="navicon d-flex align-items-center gap-2 gap-sm-3 ms-auto">
+      <i class="bi bi-search"></i>
+      <div class="cart position-relative">
+        <span class="badge-custom">{{ cartCount | async }}</span>
+        <i class="bi bi-cart3" routerLink="/cart"></i>
+      </div>
+      <i class="bi bi-person" routerLink="/login"></i>
+      <div class="favorites position-relative">
+        <span class="badge-custom">0</span>
+        <i class="bi bi-heart"></i>
+      </div>
+
+     <i class="bi bi-list d-xl-none fs-3 ms-1" 
+   style="cursor: pointer;" 
+   data-bs-toggle="offcanvas" 
+   data-bs-target="#mobileMenu">
+</i>
+    </div>
+
+  </div>
+</nav>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileMenuLabel">
+        <img src="assets/logo-01.png" alt="Logo" style="height: 20px;">
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="d-flex flex-column gap-3">
+        <a routerLink="/" class="nav-link fs-5" data-bs-dismiss="offcanvas">Home</a>
+        <a routerLink="/shop" class="nav-link fs-5" data-bs-dismiss="offcanvas">Shop</a>
+        <a routerLink="/features" class="nav-link fs-5" data-bs-dismiss="offcanvas">Features</a>
+        <a routerLink="/blog" class="nav-link fs-5" data-bs-dismiss="offcanvas">Blog</a>
+        <a routerLink="/about" class="nav-link fs-5" data-bs-dismiss="offcanvas">About</a>
+        <a routerLink="/contact" class="nav-link fs-5" data-bs-dismiss="offcanvas">Contact</a>
+    </div>
+  </div>
+</div>
+
+

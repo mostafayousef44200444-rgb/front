@@ -1,0 +1,125 @@
+
+
+/* Color Variable */
+:host {
+    --brand-blue: rgb(0 123 255 / 90%);
+}
+
+.brand-text-color {
+    color: var(--brand-blue);
+}
+
+/* Hero Style */
+.hero-wrap {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Stylish Image Box */
+.image-stack {
+    z-index: 1;
+}
+
+.color-overlay-box {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-blue);
+    z-index: -1;
+    border-radius: 8px;
+}
+
+
+
+
+:host {
+  --brand-blue: rgb(0 123 255 / 90%);
+  --soft-blue: rgba(0, 123, 255, 0.05);
+}
+
+.brand-color {
+  color: var(--brand-blue);
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+.header-line {
+  width: 80px;
+  height: 4px;
+  background-color: var(--brand-blue);
+  margin-top: 15px;
+  border-radius: 2px;
+}
+
+/* Feature Card Styling */
+.feature-card {
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+  background-color: var(--brand-blue);
+}
+
+.feature-card:hover h4, 
+.feature-card:hover p {
+  color: #ffffff !important;
+}
+
+.feature-icon-wrap {
+  width: 65px;
+  height: 65px;
+  background-color: var(--soft-blue);
+  color: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.feature-card:hover .feature-icon-wrap {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Background Number Effect */
+.card-number {
+  position: absolute;
+  right: -10px;
+  bottom: -20px;
+  font-size: 6rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.03);
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.feature-card:hover .card-number {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+/* CTA Box */
+.cta-box {
+  background: var(--brand-blue);
+  border: none;
+}
+
+.cta-box .btn-light {
+  color: var(--brand-blue) !important;
+  border-radius: 10px;
+}
+
+

@@ -1,0 +1,83 @@
+/* الخلفية العلوية */
+.profile-header {
+    height: 45vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* صورة الملف الشخصي */
+/* الخلفية العلوية بتدرج لوني */
+
+
+/* صورة المستخدم مع إطار أبيض وظل */
+.profile-avatar-wrapper {
+    margin-top: -70px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* تنسيق البطاقات */
+.custom-card {
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+/* القائمة الجانبية (Tabs) */
+.nav-pills .nav-link {
+    color: #4b5563;
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #f3f4f6;
+}
+
+.nav-pills .nav-link.active {
+    background: #4f46e5;
+    color: white;
+}
+
+/* بطاقات الطلبات */
+.order-card {
+    border-left: 5px solid #4f46e5;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.item-row {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .profile-header { height: 150px; }
+    .profile-img { width: 110px; height: 110px; }
+}
