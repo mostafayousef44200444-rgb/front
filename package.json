@@ -2,11 +2,12 @@
   "name": "front7",
   "version": "0.0.0",
   "scripts": {
-    "start": "npx ng serve",
-    "build": "npx ng build",
-    "watch": "npx ng build --watch --configuration development",
-    "test": "npx ng test"
-  },
+  "start": "npx ng serve",
+  "build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --output-path=dist/frontend/browser",
+  "watch": "npx ng build --watch --configuration development",
+  "test": "npx ng test"
+}
+,
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.2.0",
