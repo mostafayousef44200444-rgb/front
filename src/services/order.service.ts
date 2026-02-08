@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, tap } from 'rxjs';
 import { AuthService } from './auth.service';
+import { environment } from '../environments/environment';
 
 // تعريف نوع المنتج في السلة
 export interface CartItem {
@@ -9,10 +10,9 @@ export interface CartItem {
   quantity: number;
   size?: string;
   name: string;
-  price: number;   // بدل ما كان price? خليها price
+  price: number;
   image: string;
 }
-
 
 // تعريف نوع الطلب
 export interface Order {
@@ -23,11 +23,9 @@ export interface Order {
   [key: string]: any;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class OrderService {
-  private apiUrl = 'http://localhost:8080/api/orders';
+  private apiUrl = `${environment.apiUrl}/api/orders`;
 
   private cartSubject = new BehaviorSubject<CartItem[]>([]);
   cart$ = this.cartSubject.asObservable();
@@ -48,7 +46,6 @@ export class OrderService {
   }
 
   /** ======================= Cart Management ======================= */
-
   setCart(items: CartItem[]): void {
     this.cartSubject.next(items);
     this.updateCartCount(items);
@@ -73,7 +70,6 @@ export class OrderService {
   }
 
   /** ======================= Cart Operations ======================= */
-
   addItemToCart(productId: string, quantity: number = 1, size: string = ''): Observable<Order> {
     return this.http.post<Order>(`${this.apiUrl}/add-to-cart`, { productId, quantity, size }, this.getHeaders()).pipe(
       tap(order => this.setCart(order.items || []))
@@ -109,8 +105,8 @@ export class OrderService {
   }): Observable<Order> {
     return this.http.put<Order>(`${this.apiUrl}/${orderId}/confirm`, details, this.getHeaders());
   }
-  getMyOrders(): Observable<Order[]> {
-  return this.http.get<Order[]>(`${this.apiUrl}/my`, this.getHeaders());
-}
 
+  getMyOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.apiUrl}/my`, this.getHeaders());
+  }
 }

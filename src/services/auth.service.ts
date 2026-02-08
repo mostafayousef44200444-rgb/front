@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
 
+
+import { environment } from '../environments/environment';
+
 interface TokenPayload {
   id: string;
   role: string;
@@ -10,14 +13,8 @@ interface TokenPayload {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  // ────────────────────────────────────────────────
-  // غير الرابط ده لما تنشر الباك اند
-  // مثال: 'https://backend-name.up.railway.app'
-  private readonly BASE_URL = 'http://localhost:8080';  
-  // private readonly BASE_URL = 'https://your-backend-name.up.railway.app';
-  // ────────────────────────────────────────────────
-
-  private apiUrl = `${this.BASE_URL}/api/users`;
+  // رابط الباك اند من environment
+  private apiUrl = `${environment.apiUrl}/api/users`;
 
   private tokenSubject = new BehaviorSubject<string | null>(localStorage.getItem('token'));
 
