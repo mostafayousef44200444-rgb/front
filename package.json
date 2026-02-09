@@ -1,14 +1,12 @@
 {
   "name": "front7",
   "version": "0.0.0",
-"scripts": {
-  "build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --configuration production --output-path=dist/frontend/browser",
-  "start": "node server.js",
-  "watch": "npx ng build --watch --configuration development",
-  "test": "npx ng test"
-}
-
-,
+  "scripts": {
+    "build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --configuration production --output-path=dist/frontend/browser",
+    "start": "node server.js",
+    "watch": "npx ng build --watch --configuration development",
+    "test": "npx ng test"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.2.0",
@@ -22,6 +20,7 @@
     "@angular/router": "^19.2.0",
     "aos": "^2.3.4",
     "cloudinary": "^2.8.0",
+    "express": "^5.2.1",
     "gsap": "^3.13.0",
     "jwt-decode": "^4.0.0",
     "primeicons": "^6.0.1",
